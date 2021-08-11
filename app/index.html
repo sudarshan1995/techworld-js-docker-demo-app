@@ -43,14 +43,14 @@
 </style>
 <script>
     (async function init() {
-        const response = await fetch('http://localhost:3000/get-profile');
+        const response = await fetch('http://localhost:3003/get-profile');
         console.log("response", response);
         const user = await response.json();
         console.log(JSON.stringify(user));
 
-        document.getElementById('name').textContent = user.name ? user.name : 'Anna Smith';
-        document.getElementById('email').textContent = user.email ? user.email : 'anna.smith@example.com';
-        document.getElementById('interests').textContent = user.interests ? user.interests : 'coding';
+        document.getElementById('name').textContent = user.name ? user.name : 'Arpan Balpande';
+        document.getElementById('email').textContent = user.email ? user.email : 'arpan.balpande@yash.com';
+        document.getElementById('interests').textContent = user.interests ? user.interests : 'coding, cloudOps';
 
         const cont = document.getElementById('container');
         cont.style.display = 'block';
@@ -66,7 +66,7 @@
             interests: document.getElementById('input-interests').value
         };
         
-        const response = await fetch('http://localhost:3000/update-profile', {
+        const response = await fetch('http://localhost:3003/update-profile', {
             method: "POST",
             headers: {
               'Accept': 'application/json',
@@ -100,22 +100,22 @@
     <div class='container' id='container'>
         <h1>User profile</h1>
         <img src='profile-picture' alt="user-profile">
-        <span>Name: </span><h3 id='name'>Anna Smith</h3>
+        <span>Name: </span><h3 id='name'>Arpan Balpande</h3>
         <hr />
-        <span>Email: </span><h3 id='email'>anna.smith@example.com</h3>
+        <span>Email: </span><h3 id='email'>arpan.balpande@yash.com</h3>
         <hr />
-        <span>Interests: </span><h3 id='interests'>coding</h3>
+        <span>Interests: </span><h3 id='interests'>coding, cloudOps</h3>
         <hr />
         <button class='button' onclick="updateProfile()">Edit Profile</button>
     </div>
     <div class='container' id='container-edit'>
         <h1>User profile</h1>
         <img src='profile-picture' alt="user-profile">
-        <span>Name: </span><label for='input-name'></label><input type="text" id='input-name' value='Anna Smith' />
+        <span>Name: </span><label for='input-name'></label><input type="text" id='input-name' value='Arpan Balpande' />
         <hr />
-        <span>Email: </span><label for='input-email'></label><input type="email" id='input-email' value='anna.smith@example.com' />
+        <span>Email: </span><label for='input-email'></label><input type="email" id='input-email' value='arpan.balpande@yash.com' />
         <hr />
-        <span>Interests: </span><label for='input-interests'></label><input type="text" id='input-interests' value='coding' />
+        <span>Interests: </span><label for='input-interests'></label><input type="text" id='input-interests' value='coding, cloudOps' />
         <hr />
         <button class='button' onclick="handleUpdateProfileRequest()">Update Profile</button>
     </div>
